@@ -1,8 +1,8 @@
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('serviceWorker.js')
-      .then(reg => console.log('service worker registered', reg))
-      .catch(err => console.log('service worker not registered', err));
-  }
+        .then(reg => console.log('service worker registered', reg))
+        .catch(err => console.log('service worker not registered', err));
+}
 
 var h = document.documentElement,
     b = document.body,
@@ -46,3 +46,14 @@ $(document).ready(function () {
     }
     hidePreloader();
 });
+
+// Check if the device width is below a certain threshold (e.g., 768 pixels for typical mobile devices)
+if (window.innerWidth < 768) {
+    document.getElementById('responsiveContainer').classList.add('mx-12');
+    document.getElementById('responsiveContainer').classList.remove('mx-20');
+} else {
+    document.getElementById('responsiveContainer').classList.add('mx-20');
+    document.getElementById('responsiveContainer').classList.remove('mx-12');
+}
+
+//update the hackathon image accordingly
